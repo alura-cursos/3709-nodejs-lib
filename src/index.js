@@ -21,11 +21,15 @@ fs.readFile(link, 'utf-8', (erro, texto) => {
 
 function quebraEmParagrafos(texto) {
   const paragrafos = texto.toLowerCase().split('\n');
-  const contagem = paragrafos.map((paragrafo) => {
+  const contagem = paragrafos.flatMap((paragrafo) => {
+    if (!paragrafo) return [];
     return verificaPalavrasDuplicadas(paragrafo);
   })
   console.log(contagem);
 }
+
+// [1, 2, [3, 4]]
+// [1, 2, 3, 4]
 
 function limpaPalavras(palavra) {
   return palavra.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '');
