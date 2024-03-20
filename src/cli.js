@@ -26,3 +26,17 @@ async function criaESalvaArquivo(listaPalavras, endereco) {
     throw erro;
   }
 }
+
+// function criaESalvaArquivo(listaPalavras, endereco) {
+//   const arquivoNovo = `${endereco}/resultado.txt`;
+//   const textoPalavras = JSON.stringify(listaPalavras);
+  
+//   fs.promises.writeFile(arquivoNovo, textoPalavras)
+//     .then(() => {
+//       console.log('arquivo criado');
+//     })
+//     .catch((erro) => {
+//       throw erro
+//     })
+//     .finally(() => console.log('operação finalizada'))
+// }
